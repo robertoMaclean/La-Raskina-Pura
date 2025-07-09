@@ -55,7 +55,6 @@ header {
     flex-grow: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribute items to ends */
 }
 
 .simio-logo {
@@ -64,6 +63,7 @@ header {
     border-radius: 50%; /* Make it circular */
     object-fit: cover;
     border: 3px solid var(--primary-color);
+    margin-left: auto; /* Push to the right */
 }
 
 
@@ -78,6 +78,8 @@ header {
     color: var(--primary-color);
     text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.9); /* Enhanced shadow */
     animation: color-change 5s infinite alternate, pulse 2s infinite alternate; /* Added pulse animation */
+    flex-grow: 1; /* Allow h1 to take available space */
+    text-align: center; /* Center the text within h1 */
 }
 
 @keyframes color-change {
