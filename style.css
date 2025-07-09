@@ -46,7 +46,7 @@ header {
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid var(--primary-color);
-    margin-right: 2rem;
+    margin-right: 20px;
     flex-shrink: 0;
 }
 
@@ -56,13 +56,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* Consistent space between title and logo */
+    gap: 2rem; /* Consistent space between title and logo */
 }
 
 .simio-logo {
     width: 180px; /* Same size as banner image */
     height: 180px; /* Same size as banner image */
-    margin-left: 20px; /* Space between title and logo */
+    
     border-radius: 50%; /* Make it circular */
     object-fit: cover;
     border: 3px solid var(--primary-color);
