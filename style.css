@@ -24,7 +24,7 @@ header {
 }
 
 .banner {
-    background-color: var(--background-color);
+    background-color: #0d1117; /* A dark, GitHub-like background color */
     padding: 2rem 0;
     display: flex;
     justify-content: center;
@@ -55,8 +55,17 @@ header {
     flex-grow: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Align content to the left */
     gap: 2rem; /* Consistent space between title and logo */
+}
+
+.simio-logo {
+    width: 180px; /* Same size as banner image */
+    height: 180px; /* Same size as banner image */
+    margin-left: auto; /* Push to the right */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
 }
 
 .simio-logo {
