@@ -46,7 +46,7 @@ header {
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid var(--primary-color);
-    margin-right: 20px;
+    margin-right: 2rem;
     flex-shrink: 0;
 }
 
