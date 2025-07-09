@@ -8,10 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="#about-us" class="nav-link">Sobre Nosotros</a>
+            <a href="#players" class="nav-link">Los Jugadores</a>
+        </div>
+    </nav>
     <header>
         <div class="banner">
             <div class="banner-content">
                 <img src="images/raskina.jpeg" alt="La Raskina Pura Banner" class="banner-image">
+                <!-- Consider optimizing images (e.g., WebP, compression) for better performance. -->
                 <div class="banner-text">
                     <h1 id="main-title">La Raskina Pura</h1>
                     <img src="images/simio.jpeg" alt="Simio Logo" class="simio-logo">
@@ -21,12 +28,12 @@
     </header>
 
     <div class="container">
-        <div class="team-description">
+        <div class="team-description" id="about-us">
             <h2><i class="fas fa-users"></i> Sobre Nosotros</h2>
             <p>Forjados en el fragor de innumerables batallas virtuales, "La Raskina Pura" es más que un equipo; somos una hermandad. Nacimos de la pasión compartida por los videojuegos y hemos crecido hasta convertirnos en una fuerza a tener en cuenta en la comunidad. Cada miembro aporta un talento único, pero es nuestra unidad y estrategia lo que nos define. Competimos no solo para ganar, sino para superarnos a nosotros mismos y disfrutar del viaje juntos. Bienvenidos a nuestro rincón del universo gamer.</p>
         </div>
 
-        <h2><i class="fas fa-gamepad"></i> Los Jugadores</h2>
+        <h2 id="players"><i class="fas fa-gamepad"></i> Los Jugadores</h2>
         <div class="player-grid">
             <div class="player-card">
                 <img src="images/wickedsick.jpeg" alt="WickedSick">
