@@ -59,23 +59,9 @@ header {
     gap: 2rem; /* Consistent space between title and logo */
 }
 
-.simio-logo {
-    width: 180px; /* Same size as banner image */
-    height: 180px; /* Same size as banner image */
-    margin-left: auto; /* Push to the right */
-    border-radius: 50%; /* Make it circular */
-    object-fit: cover;
-    border: 3px solid var(--primary-color);
-}
 
-.simio-logo {
-    width: 180px; /* Same size as banner image */
-    height: 180px; /* Same size as banner image */
-    
-    border-radius: 50%; /* Make it circular */
-    object-fit: cover;
-    border: 3px solid var(--primary-color);
-}
+
+
 
 .banner-text h1 {
     font-size: 5rem;
