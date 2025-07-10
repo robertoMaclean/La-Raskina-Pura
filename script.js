@@ -17,4 +17,19 @@ document.addEventListener('DOMContentLoaded', function() {
     loadComponent('discord-placeholder', 'components/discord.html');
     loadComponent('announcements-placeholder', 'components/announcements.html');
     loadComponent('footer-placeholder', 'components/footer.html');
+
+    // Back to Top Button functionality
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) { // Show button after scrolling 100px
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });
