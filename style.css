@@ -26,6 +26,7 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .navbar-content {
@@ -33,20 +34,22 @@ body {
     justify-content: center;
     max-width: 90%;
     margin: 0 auto;
+    padding: 0.5rem 0; /* Adjusted padding */
 }
 
 .nav-link {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 700;
-    padding: 0.5rem 1.5rem;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.7rem 1.8rem; /* Adjusted padding */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-link:hover {
     color: #ffffff;
-    background-color: rgba(0, 170, 255, 0.2);
-    border-radius: 5px;
+    background-color: rgba(0, 170, 255, 0.3); /* Slightly more opaque */
+    border-radius: 8px; /* More rounded */
+    transform: translateY(-2px); /* Subtle lift */
 }
 
 header {
@@ -157,7 +160,7 @@ header {
 }
 
 .player-card {
-    background-color: rgba(42, 42, 42, 0.5); /* More transparent card background */
+    background: linear-gradient(145deg, rgba(42, 42, 42, 0.7), rgba(30, 30, 30, 0.7));
     border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 1.5rem;
@@ -193,7 +196,7 @@ header {
 }
 
 .game-card {
-    background-color: rgba(42, 42, 42, 0.5); /* More transparent card background */
+    background: linear-gradient(145deg, rgba(42, 42, 42, 0.7), rgba(30, 30, 30, 0.7));
     border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 0.5rem;
@@ -251,6 +254,43 @@ header {
 
 .discord-button i {
     margin-right: 0.5rem;
+}
+
+.announcement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.announcement-card {
+    background: linear-gradient(145deg, rgba(42, 42, 42, 0.7), rgba(30, 30, 30, 0.7));
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.announcement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.4);
+}
+
+.announcement-card h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.announcement-card .announcement-date {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.announcement-card p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 .note {
