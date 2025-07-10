@@ -20,8 +20,8 @@ body {
 }
 
 .navbar {
-    background-color: #1a1a1a; /* Dark background for navbar */
-    padding: 1rem 0;
+    background: linear-gradient(to right, #1a1a1a, #2a2a2a); /* Subtle gradient background for navbar */
+    padding: 0.3rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -32,9 +32,15 @@ body {
 .navbar-content {
     display: flex;
     justify-content: center;
+    align-items: center; /* Align items vertically */
     max-width: 90%;
     margin: 0 auto;
-    padding: 0.5rem 0; /* Adjusted padding */
+    padding: 0.3rem 0; /* Adjusted padding */
+}
+
+.navbar-logo {
+    height: 60px; /* Adjust as needed */
+    margin-right: 20px; /* Space between logo and links */
 }
 
 .nav-link {
