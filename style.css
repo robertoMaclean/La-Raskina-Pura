@@ -75,7 +75,10 @@ header {
 }
 
 .banner {
-    background: linear-gradient(90deg, #1a2a3a, #2a1a3a); /* A beautiful dark blue-purple gradient */
+    background: linear-gradient(90deg, rgba(26, 42, 58, 0.7), rgba(42, 26, 58, 0.7)), url('images/logo/laRaskinaBanner.webp'); /* Use laRaskinaBanner.webp as background */
+    background-size: cover; /* Ensure it covers the entire banner area */
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 2rem 0;
     display: flex;
     justify-content: center;
@@ -160,6 +163,11 @@ header {
     background: rgba(42, 42, 42, 0.5); /* More transparent card background */
     border-radius: 10px;
     border: 1px solid var(--border-color);
+}
+
+.container h2 i {
+    margin-right: 10px;
+    color: var(--primary-color);
 }
 
 .team-description h2, .container h2 {
@@ -263,6 +271,8 @@ header {
     height: auto;
     border-radius: 10px;
     margin-bottom: 1rem;
+    object-fit: contain; /* Ensure the entire image is visible */
+    background-color: #1a1a1a; /* Add a background color for consistency */
 }
 
 .game-card h3 {

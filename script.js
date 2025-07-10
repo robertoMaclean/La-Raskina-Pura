@@ -17,7 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
     loadComponent('announcements-placeholder', 'components/announcements.html');
     loadComponent('players-placeholder', 'components/players.html');
     loadComponent('games-placeholder', 'components/games.html');
-    loadComponent('discord-placeholder', 'components/discord.html');
+    loadComponent('community-placeholder', 'components/community.html', () => {
+        loadComponent('discord-section-placeholder', 'components/discord.html');
+        loadComponent('twitch-section-placeholder', 'components/twitch.html');
+    });
     loadComponent('announcements-placeholder', 'components/announcements.html');
     loadComponent('footer-placeholder', 'components/footer.html');
 
