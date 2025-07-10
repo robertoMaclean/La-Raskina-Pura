@@ -1,14 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
-    function loadComponent(componentId, filePath) {
+    function loadComponent(componentId, filePath, callback) {
         fetch(filePath)
             .then(response => response.text())
             .then(html => {
                 document.getElementById(componentId).innerHTML = html;
+                if (callback) {
+                    callback();
+                }
             })
             .catch(error => console.error(`Error loading ${filePath}:`, error));
     }
 
-    loadComponent('navbar-placeholder', 'components/navbar.html');
+    loadComponent('navbar-placeholder', 'components/navbar.html', setupNavbarToggle);
     loadComponent('header-placeholder', 'components/header.html');
     loadComponent('about-us-placeholder', 'components/about-us.html');
     loadComponent('announcements-placeholder', 'components/announcements.html');
@@ -17,6 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
     loadComponent('discord-placeholder', 'components/discord.html');
     loadComponent('announcements-placeholder', 'components/announcements.html');
     loadComponent('footer-placeholder', 'components/footer.html');
+
+    function setupNavbarToggle() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    }
 
     // Back to Top Button functionality
     const backToTopButton = document.getElementById('back-to-top');

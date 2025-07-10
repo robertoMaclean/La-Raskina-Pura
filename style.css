@@ -31,32 +31,43 @@ body {
 
 .navbar-content {
     display: flex;
-    justify-content: center;
-    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between logo and menu toggle */
+    align-items: center;
     max-width: 90%;
     margin: 0 auto;
-    padding: 0.3rem 0; /* Adjusted padding */
+    padding: 0.3rem 0;
 }
 
 .navbar-logo {
-    height: 60px; /* Adjust as needed */
-    margin-right: 20px; /* Space between logo and links */
+    height: 60px;
+    margin-right: 20px;
     border-radius: 50%;
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex; /* Default to flex for desktop */
 }
 
 .nav-link {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 700;
-    padding: 0.7rem 1.8rem; /* Adjusted padding */
+    padding: 0.7rem 1.8rem;
     transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-link:hover {
     color: #ffffff;
-    background-color: rgba(0, 170, 255, 0.3); /* Slightly more opaque */
-    border-radius: 8px; /* More rounded */
-    transform: translateY(-2px); /* Subtle lift */
+    background-color: rgba(0, 170, 255, 0.3);
+    border-radius: 8px;
+    transform: translateY(-2px);
 }
 
 header {
@@ -104,6 +115,7 @@ header {
     object-fit: cover;
     border: 3px solid var(--subtitle-color);
     margin-left: auto; /* Push to the right */
+    aspect-ratio: 1 / 1;
 }
 
 .banner-text h1 {
@@ -132,6 +144,16 @@ header {
     padding: 2rem 0;
 }
 
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem 0.5rem; /* Adjust padding for very small screens */
+    }
+
+    .banner-text h1 {
+        text-align: center; /* Ensure text remains centered */
+    }
+}
+
 .team-description {
     margin-bottom: 2rem;
     padding: 1.5rem;
@@ -150,7 +172,6 @@ header {
 
 .team-description p {
     font-size: 1.1rem;
-    max-width: 800px;
 }
 
 .about-us-content {
@@ -351,47 +372,96 @@ header {
 }
 
 @media (max-width: 768px) {
-    .banner-content {
+    .navbar-content {
+        flex-wrap: wrap; /* Allow content to wrap */
+        justify-content: space-between; /* Keep logo and toggle separated */
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .nav-links {
+        width: 100%;
         flex-direction: column;
+        display: none; /* Hide by default on mobile */
         text-align: center;
+        margin-top: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-link {
+        padding: 0.8rem 0;
+        width: 100%;
+    }
+
+    .navbar-logo {
+        margin-right: 0; /* Remove margin on mobile */
     }
 
     .banner-image {
-        margin-right: 0;
-        margin-bottom: 1rem;
+        width: 150px; /* Adjusted size for medium devices */
+        height: 150px; /* Adjusted size for medium devices */
     }
 
     .banner-text h1 {
-        font-size: 2.5rem;
+        font-size: 3rem; /* Adjusted font size for medium devices */
     }
 
-    .team-description h2, .container h2 {
-        font-size: 1.8rem;
-    }
-
-    .team-description p {
-        font-size: 0.9rem;
-    }
-
-    .player-card h3 {
-        font-size: 1.1rem;
-    }
-
-    .player-card p {
-        font-size: 0.8rem;
+    .simio-logo {
+        display: none; /* Hide simio logo on medium devices */
     }
 
     .about-us-content {
-        flex-direction: column;
+        flex-direction: column; /* Stack image above text */
         text-align: center;
     }
 
     .about-us-logo {
-        margin-bottom: 1rem;
+        margin-bottom: 1rem; /* Add space below image */
+    }
+
+    .player-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust minmax for players */
+    }
+
+    .game-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust minmax for games */
+    }
+
+    .player-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .player-card p {
+        font-size: 0.95rem;
+    }
+
+    .game-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .discord-section p {
+        font-size: 1rem;
+    }
+
+    .announcement-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .announcement-card p {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
+    .navbar-logo {
+        height: 50px; /* Smaller height for very small screens */
+    }
+
     .banner-image {
         width: 120px;
         height: 120px;
@@ -415,6 +485,27 @@ header {
 
     .player-card p {
         font-size: 0.7rem;
+    }
+
+    .about-us-logo {
+        width: 150px; /* Smaller size for very small screens */
+        height: 150px; /* Smaller size for very small screens */
+    }
+
+    .player-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Further adjust minmax for very small screens */
+    }
+
+    .game-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Further adjust minmax for very small screens */
+    }
+
+    .announcement-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .announcement-card p {
+        font-size: 0.9rem;
     }
 }
 
