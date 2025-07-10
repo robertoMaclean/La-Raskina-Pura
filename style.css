@@ -150,6 +150,12 @@ header {
     gap: 1.5rem;
 }
 
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
 .player-card {
     background-color: rgba(42, 42, 42, 0.5); /* More transparent card background */
     border: 1px solid var(--border-color);
@@ -177,13 +183,40 @@ header {
 .player-card h3 {
     font-size: 1.6rem; /* Slightly larger font */
     margin-bottom: 0.6rem; /* Adjusted margin */
-    color: var(--heading-color);
+    color: var(--primary-color);
 }
 
 .player-card p {
     font-size: 1.05rem; /* Slightly larger font */
     color: var(--text-color);
     line-height: 1.5; /* Improved line height */
+}
+
+.game-card {
+    background-color: rgba(42, 42, 42, 0.5); /* More transparent card background */
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-10px); /* More pronounced lift */
+    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.4); /* Stronger shadow */
+}
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.game-card h3 {
+    font-size: 1.6rem; /* Slightly larger font */
+    margin-bottom: 0.6rem; /* Adjusted margin */
+    color: var(--primary-color);
 }
 
 .note {
