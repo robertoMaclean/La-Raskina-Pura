@@ -155,6 +155,7 @@ header {
 
 .about-us-content {
     display: flex;
+    justify-content: center; /* Center content horizontally */
     align-items: center;
     gap: 1.5rem; /* Good distance between image and text */
     text-align: left;
