@@ -85,7 +85,7 @@ header {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid var(--primary-color);
+    border: 5px solid var(--subtitle-color);
     margin-right: 2rem;
     flex-shrink: 0;
 }
@@ -102,7 +102,7 @@ header {
     height: 180px; /* Same size as banner image */
     border-radius: 50%; /* Make it circular */
     object-fit: cover;
-    border: 3px solid var(--primary-color);
+    border: 3px solid var(--subtitle-color);
     margin-left: auto; /* Push to the right */
 }
 
