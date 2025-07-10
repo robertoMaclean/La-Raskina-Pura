@@ -10,13 +10,28 @@
     --subtitle-color: #00e6e6;
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
     margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
     background: linear-gradient(135deg, #2c3e50, #0a0a0a);
     background-attachment: fixed;
     color: var(--text-color);
     line-height: 1.6;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column; /* Arrange children in a column */
+}
+
+.main-content {
+    flex-grow: 1; /* Allow main content to expand and push footer down */
 }
 
 .navbar {
@@ -362,7 +377,7 @@ header {
 #back-to-top {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed position */
-    bottom: 20px; /* 20px from bottom */
+    bottom: 40px; /* 40px from bottom */
     right: 20px; /* 20px from right */
     background-color: var(--primary-color); /* Primary color background */
     color: white; /* White icon */
@@ -530,10 +545,19 @@ footer {
     color: #e0e0e0;
     text-align: center;
     padding: 1rem 0;
-    margin-top: 2rem;
+    margin-top: auto; /* Push footer to the bottom */
 }
 
 .footer-content {
     max-width: 90%;
     margin: 0 auto;
+    position: relative; /* For positioning the background logo */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Horizontally center items */
+}
+
+footer p {
+    position: relative; /* Ensure text is above the background logo */
+    z-index: 1; 
 }
