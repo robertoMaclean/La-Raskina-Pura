@@ -367,6 +367,28 @@ header {
     line-height: 1.6;
 }
 
+.announcement-controls {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.announcement-controls button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.announcement-controls button:hover {
+    background-color: #0088cc;
+    transform: translateY(-2px);
+}
+
 .note {
     text-align: center;
     margin-top: 2rem;

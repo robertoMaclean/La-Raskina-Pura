@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadComponent('navbar-placeholder', 'components/navbar.html', setupNavbarToggle);
     loadComponent('header-placeholder', 'components/header.html');
     loadComponent('about-us-placeholder', 'components/about-us.html');
-    loadComponent('announcements-placeholder', 'components/announcements.html');
+    loadComponent('announcements-placeholder', 'components/announcements.html', setupAnnouncements);
     loadComponent('players-placeholder', 'components/players.html');
     loadComponent('games-placeholder', 'components/games.html');
     loadComponent('community-placeholder', 'components/community.html', () => {
@@ -23,6 +23,40 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     loadComponent('announcements-placeholder', 'components/announcements.html');
     loadComponent('footer-placeholder', 'components/footer.html');
+
+    function setupAnnouncements() {
+        const announcementGrid = document.querySelector('.announcement-grid');
+        const announcements = Array.from(announcementGrid.children);
+        const showMoreButton = document.getElementById('show-more-announcements');
+        const showAllButton = document.getElementById('show-all-announcements');
+        let visibleCount = 4;
+
+        function updateVisibility() {
+            announcements.forEach((announcement, index) => {
+                announcement.style.display = index < visibleCount ? 'block' : 'none';
+            });
+
+            if (visibleCount >= announcements.length) {
+                showMoreButton.style.display = 'none';
+                showAllButton.style.display = 'none';
+            } else {
+                showMoreButton.style.display = 'inline-block';
+                showAllButton.style.display = 'inline-block';
+            }
+        }
+
+        showMoreButton.addEventListener('click', () => {
+            visibleCount += 4;
+            updateVisibility();
+        });
+
+        showAllButton.addEventListener('click', () => {
+            visibleCount = announcements.length;
+            updateVisibility();
+        });
+
+        updateVisibility();
+    }
 
     function setupNavbarToggle() {
         const menuToggle = document.querySelector('.menu-toggle');
