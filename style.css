@@ -184,7 +184,7 @@ header {
     color: var(--primary-color);
 }
 
-.team-description h2, .container h2, #discord, #twitch {
+.team-description h2, .container h2, #discord, #twitch, #instagram {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--subtitle-color);
@@ -311,7 +311,7 @@ header {
 
 .discord-button {
     display: inline-block;
-    background-color: #009999;
+    background-color: #5865F2;
     color: white;
     padding: 0.8rem 2rem;
     border-radius: 5px;
@@ -321,8 +321,52 @@ header {
 }
 
 .discord-button:hover {
-    background-color: #007777;
+    background-color: #4752C4;
     transform: translateY(-3px);
+}
+
+#discord {
+    color: #5865F2;
+}
+
+.twitch-button {
+    display: inline-block;
+    background-color: #9146FF;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.twitch-button:hover {
+    background-color: #772CE8;
+    transform: translateY(-3px);
+}
+
+#twitch {
+    color: #9146FF;
+}
+
+.instagram-button {
+    display: inline-block;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.instagram-button:hover {
+    transform: translateY(-3px);
+}
+
+#instagram {
+    color: #d6249f;
 }
 
 .discord-button i {

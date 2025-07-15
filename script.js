@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadComponent('community-placeholder', 'components/community.html', () => {
         loadComponent('discord-section-placeholder', 'components/discord.html');
         loadComponent('twitch-section-placeholder', 'components/twitch.html');
+        loadComponent('instagram-section-placeholder', 'components/instagram.html');
     });
     loadComponent('announcements-placeholder', 'components/announcements.html');
     loadComponent('footer-placeholder', 'components/footer.html');
