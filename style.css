@@ -184,7 +184,7 @@ header {
     color: var(--primary-color);
 }
 
-.team-description h2, .container h2, #discord, #twitch, #instagram {
+.team-description h2, .container h2, #discord, #twitch, #instagram, #youtube {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--subtitle-color);
@@ -367,6 +367,26 @@ header {
 
 #instagram {
     color: #d6249f;
+}
+
+.youtube-button {
+    display: inline-block;
+    background-color: #FF0000;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.youtube-button:hover {
+    background-color: #CC0000;
+    transform: translateY(-3px);
+}
+
+#youtube {
+    color: #FF0000;
 }
 
 .discord-button i {

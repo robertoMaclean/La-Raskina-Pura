@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loadComponent('discord-section-placeholder', 'components/discord.html');
         loadComponent('twitch-section-placeholder', 'components/twitch.html');
         loadComponent('instagram-section-placeholder', 'components/instagram.html');
+        loadComponent('youtube-section-placeholder', 'components/youtube.html');
     });
     loadComponent('announcements-placeholder', 'components/announcements.html');
     loadComponent('footer-placeholder', 'components/footer.html');
