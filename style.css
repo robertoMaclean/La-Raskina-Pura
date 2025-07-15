@@ -25,20 +25,20 @@ html, body {
     background-attachment: fixed;
     color: var(--text-color);
     line-height: 1.6;
-    min-height: 100vh; /* Ensure body takes full viewport height */
-    display: flex;
-    flex-direction: column; /* Arrange children in a column */
 }
 
 .main-content {
     flex-grow: 1; /* Allow main content to expand and push footer down */
+    padding-top: 70px; /* Add padding to account for fixed navbar */
 }
 
 .navbar {
     background: linear-gradient(to right, #1a1a1a, #2a2a2a); /* Subtle gradient background for navbar */
     padding: 0.3rem 0;
-    position: sticky;
+    position: fixed; /* Change to fixed */
     top: 0;
+    left: 0; /* Add left: 0 */
+    right: 0; /* Add right: 0 */
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     border-bottom: 2px solid var(--primary-color);
@@ -94,7 +94,6 @@ header {
     background-size: cover; /* Ensure it covers the entire banner area */
     background-position: center;
     background-repeat: no-repeat;
-    padding: 2rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
