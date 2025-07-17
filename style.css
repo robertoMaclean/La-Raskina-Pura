@@ -599,7 +599,13 @@ footer p {
     .player-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
     .game-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
     .announcement-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-    .player-card h3, .game-card h3, .announcement-card h3 { font-size: 1.3rem; }
+        .player-card h3, .game-card h3, .announcement-card h3 {
+        font-size: 1.3rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%; /* Ensure it respects the card width */
+    }
     .player-card p, .announcement-card p, .discord-section p { font-size: 0.9rem; }
     .discord-button, .twitch-button, .instagram-button, .youtube-button {
         padding: 0.7rem 1.8rem;
