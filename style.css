@@ -306,7 +306,7 @@ header {
 }
 
 .player-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-.game-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.game-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .announcement-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
 /* Player Card */
@@ -339,7 +339,7 @@ header {
 /* Game Card */
 .game-card {
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem; /* Adjusted padding */
 }
 
 .game-card img {
