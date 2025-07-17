@@ -444,7 +444,7 @@ header {
 .discord-button:hover { background-color: #4752C4; transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 20px rgba(88, 101, 242, 0.6); }
 .twitch-button:hover { background-color: #772CE8; transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 20px rgba(145, 70, 255, 0.6); }
 .instagram-button:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 20px rgba(214, 36, 159, 0.6); }
-.youtube-button:hover { background-color: #CC0000; transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6); }
+.youtube-button:hover { background-color: #CC0000; transform: translateY(-5px) scale(1.02);     box-shadow: 0 8px 20px rgba(255, 0, 0, 0.8); }
 
 .discord-button i, .twitch-button i, .instagram-button i, .youtube-button i {
     margin-right: 0.7rem;
@@ -508,7 +508,7 @@ header {
 .announcement-controls button:hover {
     background-color: #0088cc;
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 170, 255, 0.5);
+    box-shadow: 0 6px 15px rgba(138, 43, 226, 0.5);
 }
 
 /* Back to Top Button */
@@ -531,9 +531,9 @@ header {
 }
 
 #back-to-top:hover {
-    background-color: #0088cc;
+    background-color: #6A1B9A; /* Darker purple */
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.6);
+    box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
 }
 
 /* Footer */
