@@ -345,6 +345,8 @@ header {
 .game-card img {
     width: 100%;
     height: auto;
+    min-height: 120px; /* Minimum height for game images */
+    min-width: 120px; /* Minimum width for game images */
     border-radius: 8px;
     margin-bottom: 1rem;
     object-fit: contain;
