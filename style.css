@@ -1,54 +1,96 @@
 /* General styling */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap');
+
 :root {
-    --primary-color: #00aaff;
-    --background-color: #1a1a1a;
-    --card-background-color: #2a2a2a;
-    --text-color: #e0e0e0;
-    --heading-color: #ffffff;
-    --border-color: #444;
-    --subtitle-color: #00e6e6;
-    --font-family: 'Montserrat', sans-serif;
-    --navbar-height: 70px;
+    --primary-color: #00aaff; /* Bright Blue */
+    --secondary-color: #00e6e6; /* Cyan/Aqua for accents */
+    --background-dark: #1a1a1a; /* Dark background */
+    --background-light: #2a2a2a; /* Slightly lighter background for cards */
+    --text-color-light: #e0e0e0; /* Light grey text */
+    --text-color-dark: #ffffff; /* White text for headings */
+    --border-color: #444; /* Subtle border */
+    --gradient-start: #2c3e50; /* Dark blue-grey for body gradient */
+    --gradient-end: #0a0a0a; /* Very dark grey for body gradient */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Roboto Mono', monospace; /* For code-like elements or special text */
+    --navbar-height: 4.5rem;
+    --section-padding: 4rem 0;
+    --card-border-radius: 12px;
+    --transition-speed: 0.3s;
 }
 
 *,
 *::before,
 *::after {
     box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
     margin: 0;
     padding: 0;
-    font-family: var(--font-family);
-    background: linear-gradient(135deg, #2c3e50, #0a0a0a);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size for rem units */
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--font-primary);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     background-attachment: fixed;
-    color: var(--text-color);
-    line-height: 1.6;
+    color: var(--text-color-light);
+    line-height: 1.7;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .main-content {
     padding-top: var(--navbar-height);
+    min-height: calc(100vh - var(--navbar-height) - 5rem); /* Adjust for footer height */
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
     width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: var(--section-padding);
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: var(--font-primary);
+    color: var(--text-color-dark);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--secondary-color);
+    text-shadow: 0 0 15px rgba(0, 230, 230, 0.4);
+}
+
+h2 i {
+    margin-right: 0.8rem;
+    color: var(--primary-color);
 }
 
 /* Navbar */
 .navbar {
-    background: linear-gradient(to right, #1a1a1a, #2a2a2a);
-    padding: 0.3rem 0;
+    background: linear-gradient(to right, var(--background-dark), var(--background-light));
+    padding: 0.8rem 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    border-bottom: 2px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    border-bottom: 3px solid var(--primary-color);
+    transition: background-color var(--transition-speed) ease;
 }
 
 .navbar-content {
@@ -57,54 +99,76 @@ html, body {
     align-items: center;
     max-width: 90%;
     margin: 0 auto;
-    padding: 0.3rem 0;
 }
 
 .navbar-logo {
-    height: 60px;
-    margin-right: 20px;
+    height: 3.5rem;
     border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+    transition: transform var(--transition-speed) ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
 }
 
 .menu-toggle {
     display: none;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--primary-color);
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
 }
 
 .nav-links {
     display: flex;
+    list-style: none;
 }
 
 .nav-link {
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: 700;
-    padding: 0.7rem 1.8rem;
-    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    margin: 0 0.5rem;
+    transition: color var(--transition-speed) ease, background-color var(--transition-speed) ease, transform 0.2s ease;
+    border-radius: var(--card-border-radius);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 170, 255, 0.2); /* Lighter hover background */
+    transition: left var(--transition-speed) ease;
+    z-index: -1;
+}
+
+.nav-link:hover::before {
+    left: 0;
 }
 
 .nav-link:hover {
-    color: #ffffff;
-    background-color: rgba(0, 170, 255, 0.3);
-    border-radius: 8px;
-    transform: translateY(-2px);
+    color: var(--text-color-dark);
+    transform: translateY(-3px);
 }
 
-/* Header */
+/* Header/Banner */
 header {
-    padding: 0;
-}
-
-.banner {
     position: relative;
     overflow: hidden;
+    min-height: 60vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: white;
-    min-height: 400px;
+    justify-content: center;
+    color: var(--text-color-dark);
 }
 
 .banner-video {
@@ -115,186 +179,223 @@ header {
     height: 100%;
     object-fit: cover;
     z-index: 1;
+    filter: brightness(0.6); /* Darken video for text readability */
 }
 
 .banner-content {
     position: relative;
     z-index: 2;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* More prominent overlay */
+    padding: 2.5rem 2rem;
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 8px 30px rgba(0, 170, 255, 0.3);
+    border: 1px solid var(--primary-color);
     max-width: 90%;
     width: 100%;
-    margin: 0 auto;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
 }
 
 .banner-image {
-    width: 180px;
-    height: 180px;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid var(--subtitle-color);
-    margin-right: 2rem;
-    flex-shrink: 0;
+    border: 6px solid var(--secondary-color);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 230, 230, 0.6);
+    animation: float 3s ease-in-out infinite alternate;
 }
 
-.banner-text {
-    text-align: left;
-    flex-grow: 1;
+@keyframes float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-15px); }
+}
+
+.banner-content h1 {
+    font-size: 4.5rem;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 25px var(--primary-color), 0 0 40px rgba(0, 170, 255, 0.8);
+    animation: neon-glow 2s ease-in-out infinite alternate;
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.simio-logo {
-    width: 180px;
-    height: 180px;
+.banner-content h1 .simio-logo {
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--subtitle-color);
-    margin-left: auto;
-    aspect-ratio: 1 / 1;
+    border: 3px solid var(--secondary-color);
+    box-shadow: 0 0 10px var(--secondary-color);
 }
 
-.banner-text h1 {
-    font-size: 5rem;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--primary-color);
-    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.9);
-    animation: color-change 5s infinite alternate, pulse 2s infinite alternate;
-    flex-grow: 1;
-    text-align: center;
+@keyframes neon-glow {
+    from { text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color); }
+    to { text-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--primary-color), 0 0 40px var(--primary-color); }
 }
 
-/* Keyframes */
-@keyframes color-change {
-    0% { color: #00aaff; }
-    25% { color: #ff00ff; }
-    50% { color: #00ff00; }
-    75% { color: #ffff00; }
-    100% { color: #00aaff; }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
-}
-
-/* Sections */
+/* Section Cards (General) */
 .team-description,
 .announcement-card,
 .player-card,
 .game-card,
 .discord-section {
-    background: linear-gradient(145deg, rgba(42, 42, 42, 0.7), rgba(30, 30, 30, 0.7));
+    background: linear-gradient(145deg, rgba(42, 42, 42, 0.85), rgba(30, 30, 30, 0.85));
     border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: var(--card-border-radius);
+    padding: 2rem;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .team-description:hover,
 .announcement-card:hover,
 .player-card:hover,
 .game-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.4);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 12px 25px rgba(0, 170, 255, 0.5), 0 0 30px rgba(0, 170, 255, 0.3);
 }
 
-.container h2 i {
-    margin-right: 10px;
-    color: var(--primary-color);
-}
-
-.team-description h2, .container h2, #discord, #twitch, #instagram, #youtube {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--subtitle-color);
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.team-description p {
-    font-size: 1.1rem;
-}
-
+/* About Us Section */
 .about-us-content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    gap: 2.5rem;
+    padding: 1.5rem;
 }
 
 .about-us-logo {
-    width: 200px;
-    height: 200px;
+    width: 12rem;
+    height: 12rem;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--primary-color);
+    border: 4px solid var(--primary-color);
     flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
 }
 
+.team-description p {
+    font-size: 1.15rem;
+    max-width: 700px;
+    text-align: center;
+}
+
+/* Grids */
 .player-grid,
 .game-grid,
 .announcement-grid {
     display: grid;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .player-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .game-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .announcement-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
-.player-card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: contain;
-    border: 3px solid var(--primary-color);
-    margin-bottom: 1rem;
-    background-color: black;
+/* Player Card */
+.player-card {
+    text-align: center;
 }
 
-.player-card h3, .game-card h3, .announcement-card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 0.6rem;
+.player-card img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 1rem;
+    background-color: var(--background-dark);
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.4);
+}
+
+.player-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
     color: var(--primary-color);
 }
 
-.player-card p, .announcement-card p {
-    font-size: 1.05rem;
-    color: var(--text-color);
-    line-height: 1.5;
+.player-card p {
+    font-size: 1rem;
+    color: var(--text-color-light);
+}
+
+/* Game Card */
+.game-card {
+    text-align: center;
+    padding: 1rem;
 }
 
 .game-card img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 8px;
     margin-bottom: 1rem;
     object-fit: contain;
-    background-color: #1a1a1a;
+    background-color: var(--background-dark);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.game-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+/* Streaming Section */
+.streaming-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: var(--background-dark);
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--primary-color);
+}
+
+.streaming-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Community Section (General) */
+.discord-section {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding: 2.5rem;
 }
 
 .discord-section p {
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
+/* Social Buttons */
 .discord-button, .twitch-button, .instagram-button, .youtube-button {
-    display: inline-block;
-    color: white;
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color-dark);
+    padding: 0.9rem 2.2rem;
+    border-radius: 50px; /* Pill shape */
     text-decoration: none;
-    font-weight: 700;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin: 0.5rem;
 }
 
 .discord-button { background-color: #5865F2; }
@@ -302,78 +403,110 @@ header {
 .instagram-button { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
 .youtube-button { background-color: #FF0000; }
 
-.discord-button:hover { background-color: #4752C4; transform: translateY(-3px); }
-.twitch-button:hover { background-color: #772CE8; transform: translateY(-3px); }
-.instagram-button:hover { transform: translateY(-3px); }
-.youtube-button:hover { background-color: #CC0000; transform: translateY(-3px); }
+.discord-button:hover { background-color: #4752C4; transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 20px rgba(88, 101, 242, 0.6); }
+.twitch-button:hover { background-color: #772CE8; transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 20px rgba(145, 70, 255, 0.6); }
+.instagram-button:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 20px rgba(214, 36, 159, 0.6); }
+.youtube-button:hover { background-color: #CC0000; transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6); }
 
-#discord { color: #5865F2; }
-#twitch { color: #9146FF; }
-#instagram { color: #d6249f; }
-#youtube { color: #FF0000; }
+.discord-button i, .twitch-button i, .instagram-button i, .youtube-button i {
+    margin-right: 0.7rem;
+    font-size: 1.2rem;
+}
 
-.discord-button i {
-    margin-right: 0.5rem;
+/* Announcement Card */
+.announcement-card {
+    padding: 1.8rem;
+}
+
+.announcement-card h3 {
+    font-size: 1.7rem;
+    color: var(--primary-color);
+    margin-bottom: 0.6rem;
 }
 
 .announcement-card .announcement-date {
-    font-size: 0.9rem;
-    color: var(--text-color);
-    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-color-light);
+    margin-bottom: 1.2rem;
+    opacity: 0.8;
+}
+
+.announcement-card p {
+    font-size: 1.05rem;
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+.announcement-card a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-speed) ease;
+}
+
+.announcement-card a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
 }
 
 .announcement-controls {
     text-align: center;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
 }
 
 .announcement-controls button {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--text-color-dark);
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
+    padding: 0.9rem 1.8rem;
+    border-radius: 50px;
     cursor: pointer;
     font-weight: 700;
-    margin: 0 0.5rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0 0.8rem;
+    transition: background-color var(--transition-speed) ease, transform 0.2s ease, box-shadow var(--transition-speed) ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .announcement-controls button:hover {
     background-color: #0088cc;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 170, 255, 0.5);
 }
 
 /* Back to Top Button */
 #back-to-top {
     display: none;
     position: fixed;
-    bottom: 40px;
-    right: 20px;
+    bottom: 2.5rem;
+    right: 2rem;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--text-color-dark);
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: background-color var(--transition-speed) ease, transform 0.2s ease, box-shadow var(--transition-speed) ease;
+    z-index: 999;
 }
 
 #back-to-top:hover {
     background-color: #0088cc;
-    transform: scale(1.1);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.6);
 }
 
 /* Footer */
 footer {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
     text-align: center;
-    padding: 1rem 0;
-    margin-top: auto;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
 }
 
 .footer-content {
@@ -391,32 +524,121 @@ footer p {
 }
 
 /* Media Queries */
+@media (max-width: 1024px) {
+    .banner-content h1 {
+        font-size: 3.5rem;
+    }
+    .banner-content h1 .simio-logo {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    h2 {
+        font-size: 2.2rem;
+    }
+    .nav-link {
+        padding: 0.8rem 1rem;
+        margin: 0 0.2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .menu-toggle { display: block; }
-    .nav-links { display: none; width: 100%; flex-direction: column; text-align: center; margin-top: 1rem; }
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 1rem;
+        background: linear-gradient(to bottom, var(--background-dark), var(--background-light));
+        border-top: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+    }
     .nav-links.active { display: flex; }
-    .nav-link { padding: 0.8rem 0; width: 100%; }
-    .navbar-logo { margin-right: 0; }
-    .banner-image { width: 150px; height: 150px; }
-    .banner-text h1 { font-size: 3rem; }
-    .simio-logo { display: none; }
-    .about-us-content { flex-direction: column; text-align: center; }
-    .about-us-logo { margin-bottom: 1rem; }
-    .player-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-    .game-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
-    .player-card h3, .game-card h3, .announcement-card h3 { font-size: 1.4rem; }
-    .player-card p, .announcement-card p, .discord-section p { font-size: 0.95rem; }
+    .nav-link {
+        padding: 1rem 0;
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-link:last-child { border-bottom: none; }
+    .navbar-logo { height: 3rem; }
+
+    .banner-content h1 {
+        font-size: 2.8rem;
+        gap: 0.5rem;
+    }
+    .banner-content h1 .simio-logo {
+        width: 3rem;
+        height: 3rem;
+    }
+    .banner-image {
+        width: 8rem;
+        height: 8rem;
+    }
+    .about-us-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-us-logo {
+        margin-bottom: 1.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .team-description, .announcement-card, .player-card, .game-card, .discord-section {
+        padding: 1.5rem;
+    }
+    .player-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .game-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    .announcement-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .player-card h3, .game-card h3, .announcement-card h3 { font-size: 1.3rem; }
+    .player-card p, .announcement-card p, .discord-section p { font-size: 0.9rem; }
+    .discord-button, .twitch-button, .instagram-button, .youtube-button {
+        padding: 0.7rem 1.8rem;
+        font-size: 0.9rem;
+    }
+    #back-to-top {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .navbar-logo { height: 50px; }
-    .banner-image { width: 120px; height: 120px; }
-    .banner-text h1 { font-size: 2rem; }
-    .team-description h2, .container h2 { font-size: 1.5rem; }
-    .team-description p { font-size: 0.8rem; }
-    .player-card h3, .game-card h3, .announcement-card h3 { font-size: 1rem; }
-    .player-card p, .announcement-card p { font-size: 0.7rem; }
-    .about-us-logo { width: 150px; height: 150px; }
+    .container {
+        padding: 2rem 0.5rem;
+    }
+    .banner-content h1 {
+        font-size: 2rem;
+    }
+    .banner-content h1 .simio-logo {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .banner-image {
+        width: 6rem;
+        height: 6rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .team-description p {
+        font-size: 0.9rem;
+    }
     .player-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
-    .game-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+    .game-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+    .announcement-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .player-card h3, .game-card h3, .announcement-card h3 { font-size: 1.1rem; }
+    .player-card p, .announcement-card p, .discord-section p { font-size: 0.8rem; }
+    .discord-button, .twitch-button, .instagram-button, .youtube-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.8rem;
+        margin: 0.3rem;
+    }
+    .discord-button i, .twitch-button i, .instagram-button i, .youtube-button i {
+        margin-right: 0.5rem;
+        font-size: 1rem;
+    }
 }
