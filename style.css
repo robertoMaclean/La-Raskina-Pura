@@ -204,7 +204,7 @@ header {
     border-radius: 50%;
     object-fit: cover;
     border: 6px solid var(--secondary-color);
-    margin-bottom: 1.5rem;
+    margin-right: 2rem; /* Added space to the right */
     box-shadow: 0 0 20px rgba(0, 230, 230, 0.6);
     animation: float 3s ease-in-out infinite alternate;
 }
@@ -227,7 +227,7 @@ header {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--secondary-color);
-    margin-left: auto;
+    margin-left: 2rem; /* Added space to the left */
     aspect-ratio: 1 / 1;
     box-shadow: 0 0 10px var(--secondary-color);
 }
