@@ -443,7 +443,7 @@ header {
 
 .discord-button:hover { background-color: #4752C4; transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 20px rgba(88, 101, 242, 0.6); }
 .twitch-button:hover { background-color: #772CE8; transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 20px rgba(145, 70, 255, 0.6); }
-.instagram-button:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 20px rgba(214, 36, 159, 0.6); }
+.instagram-button:hover { transform: translateY(-5px) scale(1.02);     box-shadow: 0 8px 20px rgba(214, 36, 159, 0.8); }
 .youtube-button:hover { background-color: #CC0000; transform: translateY(-5px) scale(1.02);     box-shadow: 0 8px 20px rgba(255, 0, 0, 0.8); }
 
 .discord-button i, .twitch-button i, .instagram-button i, .youtube-button i {
