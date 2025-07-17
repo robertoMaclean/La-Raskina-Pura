@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadComponent('about-us-placeholder', 'components/about-us.html');
     loadComponent('players-placeholder', 'components/players.html');
     loadComponent('games-placeholder', 'components/games.html');
+    loadComponent('streaming-placeholder', 'components/streaming.html');
     loadComponent('community-placeholder', 'components/community.html', () => {
         loadComponent('discord-section-placeholder', 'components/discord.html');
         loadComponent('twitch-section-placeholder', 'components/twitch.html');
