@@ -2,15 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap');
 
 :root {
-    --primary-color: #00aaff; /* Bright Blue */
-    --secondary-color: #00e6e6; /* Cyan/Aqua for accents */
+    --primary-color: #8A2BE2; /* Vibrant Purple */
+    --secondary-color: #32CD32; /* Bright Lime Green */
     --background-dark: #1a1a1a; /* Dark background */
     --background-light: #2a2a2a; /* Slightly lighter background for cards */
     --text-color-light: #e0e0e0; /* Light grey text */
     --text-color-dark: #ffffff; /* White text for headings */
-    --border-color: #444; /* Subtle border */
-    --gradient-start: #2c3e50; /* Dark blue-grey for body gradient */
-    --gradient-end: #0a0a0a; /* Very dark grey for body gradient */
+    --border-color: #555; /* Slightly lighter border for contrast */
+    --gradient-start: #1a0a2a; /* Darker purple-ish gradient start */
+    --gradient-end: #05000a; /* Even darker end for depth */
     --font-primary: 'Montserrat', sans-serif;
     --font-secondary: 'Roboto Mono', monospace; /* For code-like elements or special text */
     --navbar-height: 4.5rem;
@@ -259,11 +259,11 @@ header {
 }
 
 @keyframes color-change {
-    0% { color: #00aaff; -webkit-text-stroke-color: #00e6e6; }
-    25% { color: #ff00ff; -webkit-text-stroke-color: #00aaff; }
-    50% { color: #00ff00; -webkit-text-stroke-color: #ff00ff; }
-    75% { color: #ffff00; -webkit-text-stroke-color: #00ff00; }
-    100% { color: #00aaff; -webkit-text-stroke-color: #00e6e6; }
+    0% { color: var(--primary-color); -webkit-text-stroke-color: var(--secondary-color); }
+    25% { color: #ff69b4; -webkit-text-stroke-color: var(--primary-color); } /* Hot Pink */
+    50% { color: #ffd700; -webkit-text-stroke-color: var(--secondary-color); } /* Gold */
+    75% { color: #00ffff; -webkit-text-stroke-color: var(--primary-color); } /* Cyan */
+    100% { color: var(--primary-color); -webkit-text-stroke-color: var(--secondary-color); }
 }
 
 @keyframes neon-glow {
