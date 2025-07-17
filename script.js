@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const announcements = Array.from(announcementGrid.children);
         const showMoreButton = document.getElementById('show-more-announcements');
         const showAllButton = document.getElementById('show-all-announcements');
-        let visibleCount = 4;
+        let visibleCount = 3;
 
         function updateVisibility() {
             announcements.forEach((announcement, index) => {
