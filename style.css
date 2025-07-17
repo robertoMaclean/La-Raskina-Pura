@@ -250,10 +250,20 @@ header {
     text-transform: uppercase;
     font-weight: 700;
     color: var(--primary-color);
-    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.9);
+    -webkit-text-stroke: 1.5px var(--secondary-color); /* Text stroke for outline effect */
+    text-stroke: 1.5px var(--secondary-color);
+    text-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--secondary-color), 0 0 40px var(--primary-color); /* Enhanced glow */
     animation: color-change 5s infinite alternate, pulse 2s infinite alternate;
     flex-grow: 1;
     text-align: center;
+}
+
+@keyframes color-change {
+    0% { color: #00aaff; -webkit-text-stroke-color: #00e6e6; }
+    25% { color: #ff00ff; -webkit-text-stroke-color: #00aaff; }
+    50% { color: #00ff00; -webkit-text-stroke-color: #ff00ff; }
+    75% { color: #ffff00; -webkit-text-stroke-color: #00ff00; }
+    100% { color: #00aaff; -webkit-text-stroke-color: #00e6e6; }
 }
 
 @keyframes neon-glow {
