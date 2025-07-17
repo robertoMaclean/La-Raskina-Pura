@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadComponent('navbar-placeholder', 'components/navbar.html', setupNavbarToggle);
     loadComponent('header-placeholder', 'components/header.html');
-    loadComponent('about-us-placeholder', 'components/about-us.html');
     loadComponent('announcements-placeholder', 'components/announcements.html', setupAnnouncements);
+    loadComponent('about-us-placeholder', 'components/about-us.html');
     loadComponent('players-placeholder', 'components/players.html');
     loadComponent('games-placeholder', 'components/games.html');
     loadComponent('community-placeholder', 'components/community.html', () => {
@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
         loadComponent('instagram-section-placeholder', 'components/instagram.html');
         loadComponent('youtube-section-placeholder', 'components/youtube.html');
     });
-    loadComponent('announcements-placeholder', 'components/announcements.html');
     loadComponent('footer-placeholder', 'components/footer.html');
 
     function setupAnnouncements() {
