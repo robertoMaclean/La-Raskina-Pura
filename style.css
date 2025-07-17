@@ -57,7 +57,7 @@ body {
 }
 
 /* Headings */
-h1, h2, h3 {
+h1, h2 {
     font-family: var(--font-primary);
     color: var(--text-color-dark);
     font-weight: 700;
@@ -410,6 +410,19 @@ header {
 }
 
 /* Community Section (General) */
+.discord-section h3 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--secondary-color);
+}
+
+.discord-section h3 i {
+    margin-right: 0.6rem;
+    color: var(--secondary-color);
+}
+
 .discord-section {
     text-align: center;
     margin-top: 2.5rem;
