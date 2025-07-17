@@ -339,14 +339,18 @@ header {
 /* Game Card */
 .game-card {
     text-align: center;
-    padding: 1.5rem; /* Adjusted padding */
+    padding: 1.5rem;
+    min-height: 22rem; /* Set a minimum height for consistency with player cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space between image/title and bottom */
 }
 
 .game-card img {
     width: 100%;
     height: auto;
-    min-height: 120px; /* Minimum height for game images */
-    min-width: 120px; /* Minimum width for game images */
+    min-height: 120px;
+    min-width: 120px;
     border-radius: 8px;
     margin-bottom: 1rem;
     object-fit: contain;
@@ -358,6 +362,7 @@ header {
 .game-card h3 {
     font-size: 1.4rem;
     color: var(--primary-color);
+    margin-top: auto; /* Push title to the bottom if space allows */
 }
 
 /* Streaming Section */

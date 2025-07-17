@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
         loadComponent(component.id, component.path, component.callback);
     });
 
+    // Setup navigation link highlighting
+    setupNavLinkHighlighting();
+
     // Callback function to load subcomponents of the community section
     function loadCommunitySubcomponents() {
         const subComponents = [
@@ -99,6 +102,47 @@ document.addEventListener('DOMContentLoaded', function() {
             menuToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
             });
+        }
+    }
+
+    // Highlights the active navigation link based on the visible section
+    function setupNavLinkHighlighting() {
+        const sections = document.querySelectorAll('.main-content > div[id$="-placeholder"]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50% 0px -50% 0px', // Adjust this to control when a section is considered active
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id.replace('-placeholder', '-heading');
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active-nav-link');
+                        } else {
+                            link.classList.remove('active-nav-link');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Initial highlight on load
+        const initialSection = document.querySelector('.main-content > div[id$="-placeholder"]:first-child');
+        if (initialSection) {
+            const initialSectionId = initialSection.id.replace('-placeholder', '-heading');
+            const initialNavLink = document.querySelector(`.nav-link[href="#${initialSectionId}"]`);
+            if (initialNavLink) {
+                initialNavLink.classList.add('active-nav-link');
+            }
         }
     }
 
