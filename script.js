@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Callback function to load subcomponents of the community section
     function loadCommunitySubcomponents() {
         const subComponents = [
-            { id: 'discord-section-placeholder', path: 'components/discord.html' },
+            
             { id: 'twitch-section-placeholder', path: 'components/twitch.html' },
             { id: 'instagram-section-placeholder', path: 'components/instagram.html' },
             { id: 'youtube-section-placeholder', path: 'components/youtube.html' }

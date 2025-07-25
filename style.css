@@ -410,34 +410,34 @@ header {
     border: 0;
 }
 
-/* Community Section (General) */
-.discord-section h3 {
-    font-size: 2rem;
+.social-media-container {
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 5rem; /* Increased bottom margin */
+    padding: 3rem 2.5rem; /* Increased padding-top */
+    border-top: 1px solid var(--border-color);
+}
+
+.social-media-container h3 {
+    font-size: 2.5rem;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
     color: var(--primary-color);
     text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--secondary-color);
 }
 
-.discord-section h3 i {
+.social-media-container h3 i {
     margin-right: 0.6rem;
     color: var(--secondary-color);
 }
 
-.discord-section {
-    text-align: center;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem; /* Added bottom margin */
-    padding: 3rem 2.5rem; /* Increased padding-top */
-}
-
-.discord-section p {
+.social-media-container p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
 }
 
 /* Social Buttons */
-.discord-button, .twitch-button, .instagram-button, .youtube-button {
+.twitch-button, .instagram-button, .youtube-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -451,17 +451,17 @@ header {
     margin: 0.5rem;
 }
 
-.discord-button { background-color: #5865F2; }
+
 .twitch-button { background-color: #9146FF; }
 .instagram-button { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
 .youtube-button { background-color: #FF0000; }
 
-.discord-button:hover { background-color: #4752C4; transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 20px rgba(88, 101, 242, 0.6); }
+
 .twitch-button:hover { background-color: #772CE8; transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 20px rgba(145, 70, 255, 0.6); }
 .instagram-button:hover { transform: translateY(-5px) scale(1.02);     box-shadow: 0 8px 20px rgba(214, 36, 159, 0.8); }
 .youtube-button:hover { background-color: #CC0000; transform: translateY(-5px) scale(1.02);     box-shadow: 0 8px 20px rgba(255, 0, 0, 0.8); }
 
-.discord-button i, .twitch-button i, .instagram-button i, .youtube-button i {
+.twitch-button i, .instagram-button i, .youtube-button i {
     margin-right: 0.7rem;
     font-size: 1.2rem;
 }
@@ -646,7 +646,7 @@ footer p {
     h2 {
         font-size: 2rem;
     }
-    .team-description, .announcement-card, .player-card, .game-card, .discord-section {
+    .team-description, .announcement-card, .player-card, .game-card {
         padding: 1.5rem;
     }
     .player-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
@@ -659,8 +659,8 @@ footer p {
         text-overflow: ellipsis;
         max-width: 100%; /* Ensure it respects the card width */
     }
-    .player-card p, .announcement-card p, .discord-section p { font-size: 0.9rem; }
-    .discord-button, .twitch-button, .instagram-button, .youtube-button {
+    .player-card p, .announcement-card p { font-size: 0.9rem; }
+    .twitch-button, .instagram-button, .youtube-button {
         padding: 0.7rem 1.8rem;
         font-size: 0.9rem;
     }
@@ -694,17 +694,17 @@ footer p {
     .team-description p {
         font-size: 0.9rem;
     }
-    .player-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
-    .game-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
-    .announcement-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .player-grid, .game-grid, .announcement-grid {
+        grid-template-columns: 1fr;
+    }
     .player-card h3, .game-card h3, .announcement-card h3 { font-size: 1.1rem; }
-    .player-card p, .announcement-card p, .discord-section p { font-size: 0.8rem; }
-    .discord-button, .twitch-button, .instagram-button, .youtube-button {
+    .player-card p, .announcement-card p { font-size: 0.8rem; }
+    .twitch-button, .instagram-button, .youtube-button {
         padding: 0.6rem 1.5rem;
         font-size: 0.8rem;
         margin: 0.3rem;
     }
-    .discord-button i, .twitch-button i, .instagram-button i, .youtube-button i {
+    .twitch-button i, .instagram-button i, .youtube-button i {
         margin-right: 0.5rem;
         font-size: 1rem;
     }
