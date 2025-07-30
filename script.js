@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             { id: 'twitch-section-placeholder', path: 'components/twitch.html' },
             { id: 'instagram-section-placeholder', path: 'components/instagram.html' },
-            { id: 'youtube-section-placeholder', path: 'components/youtube.html' }
+            { id: 'youtube-section-placeholder', path: 'components/youtube.html' },
+            { id: 'tiktok-section-placeholder', path: 'components/tiktok.html' }
         ];
         subComponents.forEach(component => {
             loadComponent(component.id, component.path);
